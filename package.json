@@ -2,6 +2,7 @@
   "name": "bitinstaller-checkin",
   "version": "1.0.0",
   "description": "Installer check-in system with checklist functionality and email notifications",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
