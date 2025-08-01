@@ -102,25 +102,25 @@ CREATE POLICY "Enable insert for authenticated users only" ON email_templates
 CREATE POLICY "Enable update for authenticated users only" ON email_templates
     FOR UPDATE USING (auth.role() = 'authenticated');
 
--- Insert default checklist items
+-- Insert the specific 17-item checklist based on user requirements
 INSERT INTO checklist_items (item_name, category, is_required, description, sort_order) VALUES
-('Safety Equipment Check', 'Safety', true, 'Verify all safety equipment is present and in good condition', 1),
-('Site Assessment', 'Pre-Installation', true, 'Complete site assessment and document conditions', 2),
-('Material Verification', 'Materials', true, 'Verify all required materials are available and correct', 3),
-('Tool Inspection', 'Equipment', true, 'Ensure all tools are in working condition', 4),
-('Area Preparation', 'Pre-Installation', true, 'Prepare work area and clear obstructions', 5),
-('Installation Start', 'Installation', true, 'Begin installation process', 6),
-('Quality Check 1', 'Quality', true, 'First quality inspection during installation', 7),
-('Installation Progress', 'Installation', true, 'Continue installation process', 8),
-('Quality Check 2', 'Quality', true, 'Second quality inspection', 9),
-('Installation Completion', 'Installation', true, 'Complete installation process', 10),
-('Final Quality Inspection', 'Quality', true, 'Final quality check and verification', 11),
-('Testing & Calibration', 'Testing', true, 'Test installed equipment and calibrate if needed', 12),
-('Documentation', 'Administrative', true, 'Complete all required documentation', 13),
-('Client Walkthrough', 'Client', true, 'Walk client through installation and features', 14),
-('Cleanup', 'Post-Installation', true, 'Clean work area and dispose of waste properly', 15),
-('Final Photos', 'Documentation', true, 'Take final photos of completed installation', 16),
-('Client Sign-off', 'Client', true, 'Obtain client signature on completion certificate', 17)
+('Check materials in the warehouse with photos and videos', 'Materials', true, 'Document all materials in warehouse with photos and videos', 1),
+('Scan QR code and change the status of any moved materials', 'Inventory', true, 'Scan QR codes and update material status', 2),
+('Record checking materials with the client in the van and confirm payment method', 'Client', true, 'Verify materials with client and confirm payment', 3),
+('Record the entire house, including the basement, before placing the drop cloths', 'Documentation', true, 'Document entire house condition before work begins', 4),
+('Show drop cloths placed and furniture covered with plastic, if necessary', 'Protection', true, 'Document protection measures in place', 5),
+('Videos of water temperature test and 5-gallon bucket', 'Testing', true, 'Record water temperature testing process', 6),
+('Video after demolition', 'Documentation', true, 'Record post-demolition state', 7),
+('Photos and videos before closing the walls with plywood', 'Construction', true, 'Document before plywood installation', 8),
+('Photos and videos before closing the walls with acrylic', 'Construction', true, 'Document before acrylic installation', 9),
+('Photos and videos of new drain and valve', 'Plumbing', true, 'Document new drain and valve installation', 10),
+('Client pointing out where they want the accessories', 'Client', true, 'Record client preferences for accessories', 11),
+('Video showing silicone application, slowly', 'Construction', true, 'Record silicone application process', 12),
+('Final water and bucket test', 'Testing', true, 'Perform final water and bucket testing', 13),
+('Show the completed work to the client', 'Client', true, 'Present completed work to client', 14),
+('Photos of clean bathroom, hallway, and driveway', 'Documentation', true, 'Document final clean state', 15),
+('COC (Certificate of Completion)', 'Administrative', true, 'Complete Certificate of Completion', 16),
+('Flush shower valve', 'Plumbing', true, 'Flush and test shower valve', 17)
 ON CONFLICT (item_name) DO NOTHING;
 
 -- Insert default email template

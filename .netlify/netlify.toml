@@ -15,7 +15,6 @@ publish = "dist"
 publish = "C:\\Users\\rhyan\\Downloads\\Intaller Check in\\dist"
 publishOrigin = "config"
 commandOrigin = "config"
-base = "C:\\Users\\rhyan\\Downloads\\Intaller Check in"
 command = "npm run build"
 
 [build.environment]
