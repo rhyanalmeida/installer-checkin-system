@@ -120,8 +120,7 @@ INSERT INTO checklist_items (item_name, category, is_required, description, sort
 ('Show the completed work to the client', 'Client', true, 'Present completed work to client', 14),
 ('Photos of clean bathroom, hallway, and driveway', 'Documentation', true, 'Document final clean state', 15),
 ('COC (Certificate of Completion)', 'Administrative', true, 'Complete Certificate of Completion', 16),
-('Flush shower valve', 'Plumbing', true, 'Flush and test shower valve', 17)
-ON CONFLICT (item_name) DO NOTHING;
+('Flush shower valve', 'Plumbing', true, 'Flush and test shower valve', 17);
 
 -- Insert default email template
 INSERT INTO email_templates (template_name, subject, content, recipient_email, is_active) VALUES
@@ -141,8 +140,7 @@ Thank you for your professional work.
 
 Best regards,
 Installation Team', 
-'admin@company.com', true)
-ON CONFLICT (template_name) DO NOTHING;
+'admin@company.com', true);
 
 -- Create function to update updated_at timestamp
 CREATE OR REPLACE FUNCTION update_updated_at_column()
