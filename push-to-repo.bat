@@ -1,0 +1,9 @@
+@echo off
+echo Adding all files...
+git add .
+echo Committing changes...
+git commit -m "Add continuous deployment setup with GitHub Actions and branch support"
+echo Pushing to repository...
+git push
+echo Done!
+pause

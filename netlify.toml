@@ -5,6 +5,21 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Production deployment (master branch)
+[context.production]
+  command = "npm run build"
+  publish = "dist"
+
+# Development deployment (develop branch)
+[context.develop]
+  command = "npm run build"
+  publish = "dist"
+
+# Deploy previews for pull requests
+[context.deploy-preview]
+  command = "npm run build"
+  publish = "dist"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
